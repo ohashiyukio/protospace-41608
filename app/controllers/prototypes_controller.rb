@@ -16,7 +16,7 @@ def create
      if @prototype.save
        redirect_to root_path
      else
-      render :new
+      render :new, status: :unprocessable_entity
     end
 end
 
@@ -29,7 +29,7 @@ def update
     if @prototype.update(prototype_params)
      redirect_to prototype_path(@prototype)
     else
-     render :edit
+     render :edit, status: :unprocessable_entity
     end
 end
 
